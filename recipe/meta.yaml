@@ -10,6 +10,7 @@ source:
   sha256: e58abc4539184a65faf9956957d3787616bedeb1303ac5c9b1a201d8af6b87d7
 
 build:
+  # triad is missing on s390x. 
   skip: true  # [py<36 or s390x]
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed -vvv
