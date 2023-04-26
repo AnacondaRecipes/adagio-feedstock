@@ -40,8 +40,8 @@ about:
   license_file: LICENSE
   summary: A Dag IO framework for Fugue projects.
   description: A Dag IO framework for Fugue projects.
-  dev_url: https://github.com/fugue-project/adagio/tree/0.2.4
-  doc_url: https://github.com/fugue-project/adagio/blob/0.2.4/README.md
+  dev_url: https://github.com/fugue-project/adagio
+  doc_url: https://github.com/fugue-project/adagio/blob/master/README.md
 
 extra:
   recipe-maintainers:
