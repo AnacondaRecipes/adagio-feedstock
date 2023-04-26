@@ -10,21 +10,23 @@ source:
   sha256: e58abc4539184a65faf9956957d3787616bedeb1303ac5c9b1a201d8af6b87d7
 
 build:
-  noarch: python
+  skip: true  # [py<36 or s390x]
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed -vvv
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
+    - setuptools
+    - wheel
   run:
-    - python >=3.6
-    - triad
+    - python
+    - triad >=0.6.1
 
 test:
   imports:
-    - triad
+    - adagio
   requires:
     - pip
   commands:
@@ -33,8 +35,12 @@ test:
 about:
   home: https://github.com/fugue-project/adagio
   license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
   summary: A Dag IO framework for Fugue projects.
+  description: A Dag IO framework for Fugue projects.
+  dev_url: https://github.com/fugue-project/adagio/tree/0.2.4
+  doc_url: https://github.com/fugue-project/adagio/blob/0.2.4/README.md
 
 extra:
   recipe-maintainers:
